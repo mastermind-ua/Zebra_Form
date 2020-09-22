@@ -1,7 +1,8 @@
 # Zebra_Form
 
-#### A jQuery augmented PHP library for creating and validating HTML forms
+#### A fork of jQuery augmented PHP library for creating and validating HTML forms
 
+* Fixed get_magic_quotes_gpc() deprecation
 ----
 [Packagist](https://packagist.org/) stats
 

@@ -286,25 +286,6 @@ class Zebra_Form_Control extends XSS_Clean
                     $this->submitted_value = $method[$attribute['name']];
 
                     // if submitted value is an array
-                    if (is_array($this->submitted_value)) {
-
-                        // iterate through the submitted values
-                        foreach ($this->submitted_value as $key => $value)
-
-                            // and also, if magic_quotes_gpc is on (meaning that
-                            // both single and double quotes are escaped)
-                            // strip those slashes
-                            if (get_magic_quotes_gpc()) $this->submitted_value[$key] = stripslashes($value);
-
-                    // if submitted value is not an array
-                    } else
-
-                        // and also, if magic_quotes_gpc is on (meaning that both
-                        // single and double quotes are escaped)
-                        // strip those slashes
-                        if (get_magic_quotes_gpc()) $this->submitted_value = stripslashes($this->submitted_value);
-
-                    // if submitted value is an array
                     if (is_array($this->submitted_value))
 
                         // iterate through the submitted values
