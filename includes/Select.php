@@ -339,13 +339,10 @@ class Zebra_Form_Select extends Zebra_Form_Control
                 // can't be styled, we will remove them from JavaScript
                 // having a dummy option in them (the option is disabled and, from CSS, rendered invisible)
                 $content .= '
-                    <optgroup label="' . str_repeat($indent, $level) . $value . '">
-                        <option disabled="disabled" class="dummy"></option>
-                    </optgroup>
+                    <optgroup label="' . str_repeat($indent, $level) . $value . '"> '
+                        . $this->_generate($caption, $selected, $level + 1) // call the method recursively to generate the output for the children options
+                    . '</optgroup>
                 ';
-
-                // call the method recursively to generate the output for the children options
-                $content .= $this->_generate($caption, $selected, $level + 1);
 
             // if entry is a standard option
             } else {
