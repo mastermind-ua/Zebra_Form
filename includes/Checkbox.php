@@ -200,7 +200,7 @@ class Zebra_Form_Checkbox extends Zebra_Form_Control
 
                 'type'  =>  'checkbox',
                 'name'  =>  $id,
-                'id'    =>  str_replace(array(' ', '[', ']'), array('_', ''), $id) . '_' . preg_replace('/[^a-z0-9\_]/i', '_', $value),
+                'id'    =>  str_replace(array(' ', '[', ']'), array('_', ''), $id) . '_' . preg_replace('/[^a-z0-9\_]/i', '_', (string)$value),
                 'value' =>  $value,
                 'class' =>  'control checkbox',
 

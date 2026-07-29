@@ -403,7 +403,7 @@ class Zebra_Form
                     $sanitize_name = preg_replace('/[\[\]]/', '', $name);
 
                     // sanitize the value
-                    $value = preg_replace('/\_{1,}/', '_', preg_replace('/[^a-z0-9\_]/i', '_', $value));
+                    $value = preg_replace('/\_{1,}/', '_', preg_replace('/[^a-z0-9\_]/i', '_', (string)$value));
 
                     // create control
                     $obj = & $this->add(

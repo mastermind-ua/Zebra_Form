@@ -87,6 +87,7 @@ class XSS_Clean
      */
 	function sanitize($str, $rawurldecode = true)
 	{
+		$str = (string)$str;
 
 		// Remove Invisible Characters
 		$str = $this->_remove_invisible_characters($str);
