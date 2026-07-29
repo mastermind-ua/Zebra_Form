@@ -38,6 +38,33 @@ class Zebra_Form_Control extends XSS_Clean
     public $rules;
 
     /**
+     *  Reference to the form's properties
+     *
+     *  @var array
+     *
+     *  @access private
+     */
+    public $form_properties;
+
+    /**
+     *  The value submitted for this control
+     *
+     *  @var mixed
+     *
+     *  @access private
+     */
+    public $submitted_value;
+
+    /**
+     *  Array of attributes that should be included in the JavaScript date picker object
+     *
+     *  @var array
+     *
+     *  @access private
+     */
+    public $javascript_attributes;
+
+    /**
      *  Constructor of the class
      *
      *  @return void
