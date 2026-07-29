@@ -130,6 +130,51 @@ class Zebra_Form
     var $variables;
 
     /**
+     *  Array containing all the form's properties
+     *
+     *  @var    array
+     *
+     *  @access private
+     */
+    var $form_properties;
+
+    /**
+     *  Array containing all the master labels added to the form
+     *
+     *  @var    array
+     *
+     *  @access private
+     */
+    var $master_labels;
+
+    /**
+     *  Array used for caching proxy results
+     *
+     *  @var    array
+     *
+     *  @access private
+     */
+    var $proxies_cache;
+
+    /**
+     *  Instance of the Zebra_Image class
+     *
+     *  @var    Zebra_Image
+     *
+     *  @access private
+     */
+    var $Zebra_Image;
+
+    /**
+     *  Array containing all the actions to be performed when the form is valid
+     *
+     *  @var    array
+     *
+     *  @access private
+     */
+    var $actions;
+
+    /**
      *  Constructor of the class
      *
      *  Initializes the form.
