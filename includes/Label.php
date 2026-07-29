@@ -144,8 +144,8 @@ class Zebra_Form_Label extends Zebra_Form_Control
 
 			array(
 
-                'for'   =>  preg_replace('/[^a-z0-9\_]/i', '_', $attach_to),
-                'id'    =>  preg_replace('/[^a-z0-9\_]/i', '_', $id),
+                'for'   =>  preg_replace('/[^a-z0-9\_]/i', '_', (string)$attach_to),
+                'id'    =>  preg_replace('/[^a-z0-9\_]/i', '_', (string)$id),
                 'label' =>  $caption,
                 'name'  =>  $id,
                 'type'  =>  'label',
@@ -173,17 +173,17 @@ class Zebra_Form_Label extends Zebra_Form_Control
         $attributes = $this->get_attributes('label');
 
         // if access key needs to be showed
-        if (preg_match('/(?<!\\\)\$(.{1})/', $attributes['label'], $matches) > 0) {
+        if (preg_match('/(?<!\\\)\$(.{1})/', (string)$attributes['label'], $matches) > 0) {
 
             // set the requested accesskey
             $this->set_attributes(array('accesskey' => strtolower($matches[1])));
 
             // make the accesskey visible
-            $attributes['label'] = preg_replace('/\$(.{1})/', '<span class="underline">$1</span>', $attributes['label']);
+            $attributes['label'] = preg_replace('/\$(.{1})/', '<span class="underline">$1</span>', (string)$attributes['label']);
 
         }
 
-        return '<label ' . $this->_render_attributes() . '>' . preg_replace('/\\\\\$/', '$', $attributes['label']) . '</label>';
+        return '<label ' . $this->_render_attributes() . '>' . preg_replace('/\\\\\$/', '$', (string)$attributes['label']) . '</label>';
 
     }
 

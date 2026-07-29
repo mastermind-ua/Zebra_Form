@@ -2103,7 +2103,7 @@ class Zebra_Form_Control extends XSS_Clean
                 // add attribute => value pair to the return string
                 $attributes .=
 
-                    ($attributes != '' ? ' ' : '') . $attribute . '="' . preg_replace('/\"/', '&quot;', $value) . '"';
+                    ($attributes != '' ? ' ' : '') . $attribute . '="' . preg_replace('/\"/', '&quot;', (string)$value) . '"';
 
         // returns string
         return $attributes;

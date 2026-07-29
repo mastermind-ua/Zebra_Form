@@ -167,13 +167,13 @@ class Zebra_Form_Time extends Zebra_Form_Control
         $attributes['format'] = strtolower($attributes['format']);
 
         // if invalid format specified, revert to the default "hm"
-        if (preg_match('/^[hmsg]+$/i', $attributes['format']) == 0 || strlen(preg_replace('/([a-z]{2,})/i', '$1', $attributes['format'])) != strlen($attributes['format'])) $attributes['format'] = 'hm';
+        if (preg_match('/^[hmsg]+$/i', (string)$attributes['format']) == 0 || strlen(preg_replace('/([a-z]{2,})/i', '$1', (string)$attributes['format'])) != strlen((string)$attributes['format'])) $attributes['format'] = 'hm';
 
         // see what have we sepcified as default time
-        $time = array_diff(explode(':', trim(str_replace(array('am', 'pm'), '', strtolower($attributes['value'])))), array(''));
+        $time = array_diff(explode(':', trim(str_replace(array('am', 'pm'), '', strtolower((string)$attributes['value'])))), array(''));
 
         // if, according to the time format, we have to show the hours, and the hour is given in the default time
-        if (($hour_position = strpos($attributes['format'], 'h')) !== false && isset($time[$hour_position]))
+        if (($hour_position = strpos((string)$attributes['format'], 'h')) !== false && isset($time[$hour_position]))
 
             // the default selected hour
             $selected_hour = $time[$hour_position];
