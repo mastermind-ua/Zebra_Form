@@ -11,6 +11,42 @@ class Zebra_Form_Date extends Zebra_Form_Control
 {
 
     /**
+     *  The first selectable date in the date picker
+     *
+     *  @var integer
+     *
+     *  @access private
+     */
+    public $first_selectable_date;
+
+    /**
+     *  The last selectable date in the date picker
+     *
+     *  @var integer
+     *
+     *  @access private
+     */
+    public $last_selectable_date;
+
+    /**
+     *  Array of selectable date limits
+     *
+     *  @var array
+     *
+     *  @access private
+     */
+    public $limits;
+
+    /**
+     *  Array of disabled dates
+     *
+     *  @var array
+     *
+     *  @access private
+     */
+    public $disabled_dates;
+
+    /**
      *  Adds a date control to the form.
      *
      *  <b>Do not instantiate this class directly! Use the {@link Zebra_Form::add() add()} method instead!</b>
