@@ -175,6 +175,15 @@ class Zebra_Form
     var $actions;
 
     /**
+     *  The language to be used by some of the form's controls
+     *
+     *  @var    array
+     *
+     *  @access private
+     */
+    var $language;
+
+    /**
      *  Constructor of the class
      *
      *  Initializes the form.
